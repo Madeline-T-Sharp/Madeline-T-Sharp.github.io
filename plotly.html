@@ -399,9 +399,9 @@ ny_noaa_df =
     prcp = prcp / 10
   )</code></pre>
 </div>
-<div id="scatterplot" class="section level3">
-<h3>Scatterplot</h3>
-<pre class="r"><code># creating a daily maximum vs. minimum temperature ny scatterplot
+<div id="scatter-plot" class="section level3">
+<h3>Scatter Plot</h3>
+<pre class="r"><code># creating a daily maximum vs. minimum temperature ny scatter plot
 ny_noaa_df |&gt;
   filter(
     year == &quot;2010&quot;,
@@ -460,9 +460,9 @@ ny_noaa_df |&gt;
   theme(legend.position = &quot;bottom&quot;)</code></pre>
 <p><img src="plotly_files/figure-html/creating_lineplot-1.png" alt="" width="672" /></p>
 </div>
-<div id="boxplot" class="section level3">
-<h3>Boxplot</h3>
-<pre class="r"><code># creating a monthly total precipitation per month across years in ny boxplot
+<div id="box-plot" class="section level3">
+<h3>Box Plot</h3>
+<pre class="r"><code># creating a monthly total precipitation per month across years in ny box plot
 ny_noaa_df |&gt;
   group_by(year, month) |&gt;
   summarize(
