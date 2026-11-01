@@ -13,6 +13,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+<div style="margin-top: 40px;"></div>
+
 ### Libraries
 
 ```{r loading_libraries, message = F}
