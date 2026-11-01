@@ -36,7 +36,7 @@ library(plotly)
 
 <div style="margin-top: 30px;"></div>
 
-```{r loading_tidying data, message = F}
+```{r loading_tidying_data, message = F}
 # loading ny_noaa data set
 data(ny_noaa)
 
@@ -140,6 +140,9 @@ ny_noaa_df |>
 # creating a monthly total precipitation per month across years in ny box plot
 ny_noaa_df |>
   group_by(year, month) |>
+  filter(
+    sum(!is.na(prcp)) >= 0.9 * n()
+  ) |>
   summarize(
     total_prcp = sum(prcp, na.rm = TRUE),
     .groups = "drop"
@@ -155,7 +158,7 @@ ny_noaa_df |>
   geom_boxplot(outlier.alpha = 0.4) +
   scale_fill_viridis_d(option = "D") +
   labs(
-    title = "Monthly Total Precipitation Distribution in New York (1981-2010)",
+    title = "Monthly Total Precipitation Distribution in New York (1981–2010)",
     x = "Month",
     y = "Total Monthly Precipitation (mm)"
   ) +

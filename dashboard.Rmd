@@ -1,0 +1,145 @@
+---
+title: "Dashboard"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include = F, message = F}
+# loading flexdashboard library
+library(flexdashboard)
+
+# loading tidyverse library
+library(tidyverse)
+
+# loading p8105.datasets library
+library(p8105.datasets)
+
+# loading plotly library
+library(plotly)
+```
+
+```{r loading_tidying_data, message = F}
+# loading ny_noaa data set
+data(ny_noaa)
+
+# tidying the ny_noaa data set
+ny_noaa_df =
+  ny_noaa |>
+  separate(
+    date,
+    into = c("year", "month", "day"),
+    sep = "-"
+  ) |>
+  mutate(
+    across(
+      c(prcp, snow, snwd, tmax, tmin),
+      ~ na_if(as.numeric(.x), -9999)
+    ),
+    tmax = tmax / 10,
+    tmin = tmin / 10,
+    prcp = prcp / 10
+  )
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Scatter Plot
+
+```{r creating_scatterplot, message = F}
+# creating a daily maximum vs. minimum temperature ny scatter plot
+ny_noaa_df |>
+  filter(
+    year == "2010",
+    !is.na(tmax),
+    !is.na(tmin)
+  ) |>
+  ggplot(aes(x = tmin, y = tmax, color = tmax)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(
+    method = "lm",
+    color = "black",
+    se = FALSE
+  ) +
+  scale_color_viridis_c(option = "D") +
+  labs(
+    title = "Daily Maximum vs. Minimum Temperatures in New York (2010)", 
+    x = "Minimum Temperature (°C)",
+    y = "Maximum Temperature (°C)",
+    color = "Maximum Temperature"
+  ) +
+  theme_minimal()
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Line Plot
+
+```{r creating_lineplot, message = F}
+# creating a line plot comparing max and min temperature trends in ny
+ny_noaa_df |>
+  group_by(year) |>
+  summarize(
+    mean_tmax = mean(tmax, na.rm = TRUE),
+    mean_tmin = mean(tmin, na.rm = TRUE)
+  ) |>
+  pivot_longer(
+    cols = c(mean_tmax, mean_tmin),
+    names_to = "temperature",
+    values_to = "mean_temp"
+  ) |>
+  ggplot(aes(
+    x = as.numeric(year),
+    y = mean_temp,
+    color = temperature
+  )) +
+  geom_line(linewidth = 1) +
+  geom_smooth(se = FALSE, linewidth = 0.8, linetype = "dashed") +
+  scale_color_viridis_d(
+    option = "D",
+    labels = c("Maximum temperature", "Minimum temperature")
+  ) +
+  labs(
+    title = "Annual Temperature Trends in New York (1981–2010)",
+    x = "Year",
+    y = "Average Temperature (°C)",
+    color = "Temperature"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "bottom")
+```
+
+### Box Plot
+
+```{r creating_boxplot, message = F}
+# creating a monthly total precipitation per month across years in ny box plot
+ny_noaa_df |>
+  group_by(year, month) |>
+  filter(
+    sum(!is.na(prcp)) >= 0.9 * n()
+  ) |>
+  summarize(
+    total_prcp = sum(prcp, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  mutate(
+    month = factor(
+      month,
+      levels = sprintf("%02d", 1:12),
+      labels = month.abb
+    )
+  ) |>
+  ggplot(aes(x = month, y = total_prcp, fill = month)) +
+  geom_boxplot(outlier.alpha = 0.4) +
+  scale_fill_viridis_d(option = "D") +
+  labs(
+    title = "Monthly Total Precipitation Distribution in New York (1981–2010)",
+    x = "Month",
+    y = "Total Monthly Precipitation (mm)"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
