@@ -498,6 +498,9 @@ ny_noaa_df |&gt;
 <pre class="r"><code># creating a monthly total precipitation per month across years in ny box plot
 ny_noaa_df |&gt;
   group_by(year, month) |&gt;
+  filter(
+    sum(!is.na(prcp)) &gt;= 0.9 * n()
+  ) |&gt;
   summarize(
     total_prcp = sum(prcp, na.rm = TRUE),
     .groups = &quot;drop&quot;
@@ -513,7 +516,7 @@ ny_noaa_df |&gt;
   geom_boxplot(outlier.alpha = 0.4) +
   scale_fill_viridis_d(option = &quot;D&quot;) +
   labs(
-    title = &quot;Monthly Total Precipitation Distribution in New York (1981-2010)&quot;,
+    title = &quot;Monthly Total Precipitation Distribution in New York (1981–2010)&quot;,
     x = &quot;Month&quot;,
     y = &quot;Total Monthly Precipitation (mm)&quot;
   ) +
