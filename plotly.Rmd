@@ -2,7 +2,10 @@
 title: "Plotly"
 author: "Madeline Sharp"
 date: "`r Sys.Date()`"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
 ```{r setup, include = F, message = F}
@@ -10,7 +13,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-Libraries: Loading
+### Libraries
 
 ```{r loading_libraries, message = F}
 # loading tidyverse library
@@ -23,7 +26,7 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-Data: Reading and Tidying
+### Data
 
 ```{r loading_tidying data, message = F}
 # loading ny_noaa data set
@@ -48,10 +51,10 @@ ny_noaa_df =
   )
 ```
 
-Scatterplot: Daily Maximum vs. Minimum Temperature in NY (2010)
+### Scatter Plot
 
 ```{r creating_scatterplot, message = F}
-# creating a daily maximum vs. minimum temperature ny scatterplot
+# creating a daily maximum vs. minimum temperature ny scatter plot
 ny_noaa_df |>
   filter(
     year == "2010",
@@ -75,7 +78,7 @@ ny_noaa_df |>
   theme_minimal()
 ```
 
-Line Plot: Annual Temperature Trends in NY (1981-2010)
+### Line Plot
 
 ```{r creating_lineplot, message = F}
 # creating a line plot comparing max and min temperature trends in ny
@@ -111,10 +114,10 @@ ny_noaa_df |>
   theme(legend.position = "bottom")
 ```
 
-Boxplot: Monthly Total Precipitation Distribution in NY (1981-2010)
+### Box Plot
 
 ```{r creating_boxplot, message = F}
-# creating a monthly total precipitation per month across years in ny boxplot
+# creating a monthly total precipitation per month across years in ny box plot
 ny_noaa_df |>
   group_by(year, month) |>
   summarize(
@@ -139,5 +142,6 @@ ny_noaa_df |>
   theme_minimal() +
   theme(legend.position = "none")
 ```
+
 
 To go home, click [here](index.html).
