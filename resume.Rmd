@@ -8,15 +8,29 @@ output:
 <div style="margin-top: 40px;"></div>
 
 ### Summary
+
+<div style="margin-top: 30px;"></div>
+
 #### Interests
+
+<div style="margin-top: 30px;"></div>
+
 My research interests span infectious disease, social, spatial, genomic, and wastewater-based epidemiology; biological, medical, and sociocultural anthropology; Caribbean archaeology and heritage management; and agriculture and food science. I am particularly interested in interdisciplinary, mixed-methods approaches integrating computational, laboratory, field-based, and archival research to investigate the biological, environmental, historical, and sociocultural dimensions of health and disease.
 
+<div style="margin-top: 30px;"></div>
+
 #### Experience 
+
+<div style="margin-top: 30px;"></div>
+
 My experience encompasses fieldwork, laboratory research, scientific writing, data analysis, curation, conservation, and project management. Ultimately, I hope to pursue doctoral research in Epidemiology, Environmental Health Sciences, or a related field, advancing historically informed and equity-centered planetary health research across the Caribbean and Americas.
 
 <div style="margin-top: 40px;"></div>
 
 ### Education
+
+<div style="margin-top: 30px;"></div> 
+
 * M.S. in Environmental Health Data Science — Columbia University (in progress)
 
 * MSc. in Medical Anthropology — University of Edinburgh
@@ -28,99 +42,108 @@ My experience encompasses fieldwork, laboratory research, scientific writing, da
 <div style="margin-top: 40px;"></div>
 
 ### Work and Research Experience
-__Spatial Epidemiology Lab__
 
-Role: Research Assistant
+<div style="margin-top: 30px;"></div>
 
-Setting: NYC, NY, USA | Oct. 2026 – Present
+  __Spatial Epidemiology Lab__
+  
+  Role: Research Assistant
+  
+  Setting: NYC, NY, USA | Oct. 2026 – Present
+  
+  Principal Investigator: Dr. Dustin Duncan, Dept. of Epidemiology, Columbia University Mailman School of Public Health
+  
+  * Supporting the development and implementation of TUJUANE, a pilot initiative exploring social capital as a mechanism
+  for strengthening HIV prevention and care among sexual minority men in Nairobi, Kenya.
+  
+  * Facilitate participant recruitment for The Black Professors Study, examining how workplace conditions and experiences
+  shape academic productivity, sleep, and mental health among faculty of color.
+  
+  <div style="margin-top: 30px;"></div>
+  
+  __Social Equity Action Lab (SEAL)__
+  
+  Role: Research Fellow
+  
+  Setting: Remote | Jan. 2026 – Present
+  
+  * Conducting research to address systemic healthcare problems through legislation and policy making across themes of social
+  equity, climate and health, care delivery, digital health, mental health, caregiver policy, and out-of-hospital care for
+  publication
+  
+    * Currently supporting research project focused on home-based care and healthcare delivery
+  
+  <div style="margin-top: 30px;"></div>
+  
+  __Boston Public Health Commission (BPHC)__
+  
+  Role: Health and Racial Equity in Wastewater Epidemiology Researcher (Epidemiology focus)
+  
+  Setting: Boston, MA, USA | Jul. 2023 – Jun. 2024
+  
+  * Supporting the implementation of BPHC’s neighborhood-level infectious disease wastewater monitoring program in the
+  city of Boston
+  
+  * Conducting research on syndromic surveillance strategies, COVID-19 lineages/variants, seasonal respiratory illness
+  surveillance data sources (4C, MAVEN, NSSP), fetal infant mortality review (FIMR) legislation, overdose data to action
+  (OD2A) and ICD-10 codes to advance public health strategy
+  
+  * Coordinating biomarker/genomic monitoring literature reviews and research in wastewater settings to detect for infectious
+  disease (COVID-19, RSV, Influenza) and substance use indicators
+  
+  * Data management, cleaning, visualization, biostatistical analysis and spatial analysis training in R and GIS to develop
+  biweekly wastewater surveillance data reports for public health outreach
+  
+  * Co-authoring publications, manuscripts, grant and IRB proposals, public health messaging/protocols and conference
+  materials focusing on neighborhood-level infectious disease wastewater monitoring
+  
+  * Developing dashboards and training materials for R-based wastewater report generation and disease mapping
+  
+  * Overseeing interviews, meetings, administration and internal/external collaborations relevant to Boston’s wastewater
+  monitoring system, sewer construction, and FIMRs
+  
+  <div style="margin-top: 30px;"></div>
+  
+  Role: Health and Racial Equity in Wastewater Epidemiology Researcher ((Bio)medical Anthropology focus)
+  
+  Setting: Boston, MA, USA | Feb. 2023 – Jun. 2023
+  
+  * Leading monthly seminar presentations related to my independent ELSI research on the sociocultural and environmental
+  development of Boston population/public health, neighborhoods and sewer systems
+  
+  * Overseeing technical documentation, interviews, meetings, administration and internal/external collaborations relevant to Boston’s wastewater monitoring system and sewer construction
+  
+  * Creating biweekly wastewater surveillance data reports for public health outreach
+  
+  <div style="margin-top: 30px;"></div>
+  
+  __Brown University__
+  
+  Role: Undergraduate Teaching Assistant
+  
+  Setting: Providence, RI, USA | Sept. – Dec. 2022
+  
+  Class: UNIV 0450: We Live In Interesting Times – The Long Reach of the COVID-19 Pandemic
+  
+  Professors: Dr. Daniel M. Weinreich, Dept. of Ecology, Evolution and Organismal Biology, Center for Computational Molecular Biology; Dr. Emily F. Oster, Dept. of Economics
+  
+  * Planning the curriculum (topical student assessments and activities) with professors for new interdisciplinary public health course on the long reach of the COVID-19 pandemic
+  
+  * Leading weekly discussion sections and managing student queries on the long-reach of the COVID-19 pandemic
+  
+  <div style="margin-top: 40px;"></div>
 
-Principal Investigator: Dr. Dustin Duncan, Dept. of Epidemiology, Columbia University Mailman School of Public Health
+### Skills
 
-* Supporting the development and implementation of TUJUANE, a pilot initiative exploring social capital as a mechanism
-for strengthening HIV prevention and care among sexual minority men in Nairobi, Kenya.
-
-* Facilitate participant recruitment for The Black Professors Study, examining how workplace conditions and experiences
-shape academic productivity, sleep, and mental health among faculty of color.
-
-<div style="margin-top: 20px;"></div>
-
-__Social Equity Action Lab (SEAL)__
-
-Role: Research Fellow
-
-Setting: Remote | Jan. 2026 – Present
-
-* Conducting research to address systemic healthcare problems through legislation and policy making across themes of social
-equity, climate and health, care delivery, digital health, mental health, caregiver policy, and out-of-hospital care for
-publication
-
-  * Currently supporting research project focused on home-based care and healthcare delivery
-
-<div style="margin-top: 20px;"></div>
-
-__Boston Public Health Commission (BPHC)__
-
-Role: Health and Racial Equity in Wastewater Epidemiology Researcher (Epidemiology focus)
-
-Setting: Boston, MA, USA | Jul. 2023 – Jun. 2024
-
-* Supporting the implementation of BPHC’s neighborhood-level infectious disease wastewater monitoring program in the
-city of Boston
-
-* Conducting research on syndromic surveillance strategies, COVID-19 lineages/variants, seasonal respiratory illness
-surveillance data sources (4C, MAVEN, NSSP), fetal infant mortality review (FIMR) legislation, overdose data to action
-(OD2A) and ICD-10 codes to advance public health strategy
-
-* Coordinating biomarker/genomic monitoring literature reviews and research in wastewater settings to detect for infectious
-disease (COVID-19, RSV, Influenza) and substance use indicators
-
-* Data management, cleaning, visualization, biostatistical analysis and spatial analysis training in R and GIS to develop
-biweekly wastewater surveillance data reports for public health outreach
-
-* Co-authoring publications, manuscripts, grant and IRB proposals, public health messaging/protocols and conference
-materials focusing on neighborhood-level infectious disease wastewater monitoring
-
-* Developing dashboards and training materials for R-based wastewater report generation and disease mapping
-
-* Overseeing interviews, meetings, administration and internal/external collaborations relevant to Boston’s wastewater
-monitoring system, sewer construction, and FIMRs
-
-<div style="margin-top: 10px;"></div>
-
-Role: Health and Racial Equity in Wastewater Epidemiology Researcher ((Bio)medical Anthropology focus)
-
-Setting: Boston, MA, USA | Feb. 2023 – Jun. 2023
-
-* Leading monthly seminar presentations related to my independent ELSI research on the sociocultural and environmental
-development of Boston population/public health, neighborhoods and sewer systems
-
-* Overseeing technical documentation, interviews, meetings, administration and internal/external collaborations relevant to Boston’s wastewater monitoring system and sewer construction
-
-* Creating biweekly wastewater surveillance data reports for public health outreach
-
-<div style="margin-top: 20px;"></div>
-
-__Brown University__
-
-Role: Undergraduate Teaching Assistant
-
-Setting: Providence, RI, USA | Sept. – Dec. 2022
-
-Class: UNIV 0450: We Live In Interesting Times – The Long Reach of the COVID-19 Pandemic
-
-Professors: Dr. Daniel M. Weinreich, Dept. of Ecology, Evolution and Organismal Biology, Center for Computational Molecular Biology; Dr. Emily F. Oster, Dept. of Economics
-
-* Planning the curriculum (topical student assessments and activities) with professors for new interdisciplinary public health course on the long reach of the COVID-19 pandemic
-
-* Leading weekly discussion sections and managing student queries on the long-reach of the COVID-19 pandemic
-
-<div style="margin-top: 40px;"></div>
-
-SKILLS
+<div style="margin-top: 30px;"></div>
 
 __Technical Skills:__ Proficient in Computer Programming (Java, JavaFX, MATLAB, QGIS, R, RStudio); MySQL; Tableau; Microsoft Office Suite; Google Workspace; Slack; Qualitative and quantitative research (data collection, analysis and writing)
 
+<div style="margin-top: 30px;"></div>
+
 __Professional Skills:__ Adaptable; Collaborative; Critical Thinking and Analysis; Detail-oriented; Empathetic; Inquisitive; Interpersonal and Oral Communication; Creative; Leadership; Open-minded; Problem-solver; Quick-thinking; Resilient under pressure; Time Management
+
+<div style="margin-top: 30px;"></div>
 
 __Languages:__ English (fluent), Jamaican Patois (fluent), Spanish (proficient)
 
@@ -128,5 +151,7 @@ __Languages:__ English (fluent), Jamaican Patois (fluent), Spanish (proficient)
 
 ### CV
 [View PDF](files/sharp_madeline_cv_2026.pdf)
+
+<div style="margin-top: 40px;"></div>
 
 To go home, click [here](index.html).

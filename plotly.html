@@ -370,6 +370,9 @@ div.tocify {
 </div>
 <div id="libraries" class="section level3">
 <h3>Libraries</h3>
+<div style="margin-top: 30px;">
+
+</div>
 <pre class="r"><code># loading tidyverse library
 library(tidyverse)
 
@@ -378,9 +381,15 @@ library(p8105.datasets)
 
 # loading plotly library
 library(plotly)</code></pre>
+<div style="margin-top: 40px;">
+
+</div>
 </div>
 <div id="data" class="section level3">
 <h3>Data</h3>
+<div style="margin-top: 30px;">
+
+</div>
 <pre class="r"><code># loading ny_noaa data set
 data(ny_noaa)
 
@@ -401,9 +410,15 @@ ny_noaa_df =
     tmin = tmin / 10,
     prcp = prcp / 10
   )</code></pre>
+<div style="margin-top: 40px;">
+
+</div>
 </div>
 <div id="scatter-plot" class="section level3">
 <h3>Scatter Plot</h3>
+<div style="margin-top: 30px;">
+
+</div>
 <pre class="r"><code># creating a daily maximum vs. minimum temperature ny scatter plot
 ny_noaa_df |&gt;
   filter(
@@ -427,9 +442,15 @@ ny_noaa_df |&gt;
   ) +
   theme_minimal()</code></pre>
 <p><img src="plotly_files/figure-html/creating_scatterplot-1.png" alt="" width="672" /></p>
+<div style="margin-top: 40px;">
+
+</div>
 </div>
 <div id="line-plot" class="section level3">
 <h3>Line Plot</h3>
+<div style="margin-top: 30px;">
+
+</div>
 <pre class="r"><code># creating a line plot comparing max and min temperature trends in ny
 ny_noaa_df |&gt;
   group_by(year) |&gt;
@@ -462,9 +483,15 @@ ny_noaa_df |&gt;
   theme_minimal() +
   theme(legend.position = &quot;bottom&quot;)</code></pre>
 <p><img src="plotly_files/figure-html/creating_lineplot-1.png" alt="" width="672" /></p>
+<div style="margin-top: 40px;">
+
+</div>
 </div>
 <div id="box-plot" class="section level3">
 <h3>Box Plot</h3>
+<div style="margin-top: 30px;">
+
+</div>
 <pre class="r"><code># creating a monthly total precipitation per month across years in ny box plot
 ny_noaa_df |&gt;
   group_by(year, month) |&gt;
@@ -490,6 +517,9 @@ ny_noaa_df |&gt;
   theme_minimal() +
   theme(legend.position = &quot;none&quot;)</code></pre>
 <p><img src="plotly_files/figure-html/creating_boxplot-1.png" alt="" width="672" /></p>
+<div style="margin-top: 40px;">
+
+</div>
 <p>To go home, click <a href="index.html">here</a>.</p>
 </div>
 

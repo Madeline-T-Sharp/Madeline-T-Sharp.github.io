@@ -17,6 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Libraries
 
+<div style="margin-top: 30px;"></div>
+
 ```{r loading_libraries, message = F}
 # loading tidyverse library
 library(tidyverse)
@@ -28,7 +30,11 @@ library(p8105.datasets)
 library(plotly)
 ```
 
+<div style="margin-top: 40px;"></div>
+
 ### Data
+
+<div style="margin-top: 30px;"></div>
 
 ```{r loading_tidying data, message = F}
 # loading ny_noaa data set
@@ -53,7 +59,11 @@ ny_noaa_df =
   )
 ```
 
+<div style="margin-top: 40px;"></div>
+
 ### Scatter Plot
+
+<div style="margin-top: 30px;"></div>
 
 ```{r creating_scatterplot, message = F}
 # creating a daily maximum vs. minimum temperature ny scatter plot
@@ -80,7 +90,11 @@ ny_noaa_df |>
   theme_minimal()
 ```
 
+<div style="margin-top: 40px;"></div>
+
 ### Line Plot
+
+<div style="margin-top: 30px;"></div>
 
 ```{r creating_lineplot, message = F}
 # creating a line plot comparing max and min temperature trends in ny
@@ -116,7 +130,11 @@ ny_noaa_df |>
   theme(legend.position = "bottom")
 ```
 
+<div style="margin-top: 40px;"></div>
+
 ### Box Plot
+
+<div style="margin-top: 30px;"></div>
 
 ```{r creating_boxplot, message = F}
 # creating a monthly total precipitation per month across years in ny box plot
@@ -145,5 +163,6 @@ ny_noaa_df |>
   theme(legend.position = "none")
 ```
 
+<div style="margin-top: 40px;"></div>
 
 To go home, click [here](index.html).
