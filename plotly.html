@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Madeline Sharp" />
+
+<meta name="date" content="2026-11-01" />
+
+<title>Plotly</title>
+
+<script src="site_libs/header-attrs-2.32/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Home</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="resume.html">Resume</a>
+</li>
+<li>
+  <a href="mailto:mts2203@cumc.columbia.edu">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/Madeline-T-Sharp/">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/madeline-sharp-9933571a3/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Plotly</h1>
+<h4 class="author">Madeline Sharp</h4>
+<h4 class="date">2026-11-01</h4>
+
+</div>
+
+
+<div id="libraries-loading" class="section level3">
+<h3>Libraries: Loading</h3>
+<pre class="r"><code># loading tidyverse library
+library(tidyverse)
+
+# loading p8105.datasets library
+library(p8105.datasets)
+
+# loading plotly library
+library(plotly)</code></pre>
+</div>
+<div id="data-reading-and-tidying" class="section level3">
+<h3>Data: Reading and Tidying</h3>
+<pre class="r"><code># loading ny_noaa data set
+data(ny_noaa)
+
+# tidying the ny_noaa data set
+ny_noaa_df =
+  ny_noaa |&gt;
+  separate(
+    date,
+    into = c(&quot;year&quot;, &quot;month&quot;, &quot;day&quot;),
+    sep = &quot;-&quot;
+  ) |&gt;
+  mutate(
+    across(
+      c(prcp, snow, snwd, tmax, tmin),
+      ~ na_if(as.numeric(.x), -9999)
+    ),
+    tmax = tmax / 10,
+    tmin = tmin / 10,
+    prcp = prcp / 10
+  )</code></pre>
+</div>
+<div id="scatterplot-daily-maximum-vs.-minimum-temperature-in-ny-2010"
+class="section level3">
+<h3>Scatterplot: Daily Maximum vs. Minimum Temperature in NY (2010)</h3>
+<pre class="r"><code># creating a daily maximum vs. minimum temperature ny scatterplot
+ny_noaa_df |&gt;
+  filter(
+    year == &quot;2010&quot;,
+    !is.na(tmax),
+    !is.na(tmin)
+  ) |&gt;
+  ggplot(aes(x = tmin, y = tmax, color = tmax)) +
+  geom_point(alpha = 0.3) +
+  geom_smooth(
+    method = &quot;lm&quot;,
+    color = &quot;black&quot;,
+    se = FALSE
+  ) +
+  scale_color_viridis_c(option = &quot;D&quot;) +
+  labs(
+    title = &quot;Daily Maximum vs. Minimum Temperatures in New York (2010)&quot;, 
+    x = &quot;Minimum Temperature (°C)&quot;,
+    y = &quot;Maximum Temperature (°C)&quot;,
+    color = &quot;Maximum Temperature&quot;
+  ) +
+  theme_minimal()</code></pre>
+<p><img src="plotly_files/figure-html/creating_scatterplot-1.png" alt="" width="672" /></p>
+</div>
+<div id="line-plot-annual-temperature-trends-in-ny-1981-2010"
+class="section level3">
+<h3>Line Plot: Annual Temperature Trends in NY (1981-2010)</h3>
+<pre class="r"><code># creating a line plot comparing max and min temperature trends in ny
+ny_noaa_df |&gt;
+  group_by(year) |&gt;
+  summarize(
+    mean_tmax = mean(tmax, na.rm = TRUE),
+    mean_tmin = mean(tmin, na.rm = TRUE)
+  ) |&gt;
+  pivot_longer(
+    cols = c(mean_tmax, mean_tmin),
+    names_to = &quot;temperature&quot;,
+    values_to = &quot;mean_temp&quot;
+  ) |&gt;
+  ggplot(aes(
+    x = as.numeric(year),
+    y = mean_temp,
+    color = temperature
+  )) +
+  geom_line(linewidth = 1) +
+  geom_smooth(se = FALSE, linewidth = 0.8, linetype = &quot;dashed&quot;) +
+  scale_color_viridis_d(
+    option = &quot;D&quot;,
+    labels = c(&quot;Maximum temperature&quot;, &quot;Minimum temperature&quot;)
+  ) +
+  labs(
+    title = &quot;Annual Temperature Trends in New York (1981–2010)&quot;,
+    x = &quot;Year&quot;,
+    y = &quot;Average Temperature (°C)&quot;,
+    color = &quot;Temperature&quot;
+  ) +
+  theme_minimal() +
+  theme(legend.position = &quot;bottom&quot;)</code></pre>
+<p><img src="plotly_files/figure-html/creating_lineplot-1.png" alt="" width="672" /></p>
+</div>
+<div
+id="boxplot-monthly-total-precipitation-distribution-in-ny-1981-2010"
+class="section level3">
+<h3>Boxplot: Monthly Total Precipitation Distribution in NY
+(1981-2010)</h3>
+<pre class="r"><code># creating a monthly total precipitation per month across years in ny boxplot
+ny_noaa_df |&gt;
+  group_by(year, month) |&gt;
+  summarize(
+    total_prcp = sum(prcp, na.rm = TRUE),
+    .groups = &quot;drop&quot;
+  ) |&gt;
+  mutate(
+    month = factor(
+      month,
+      levels = sprintf(&quot;%02d&quot;, 1:12),
+      labels = month.abb
+    )
+  ) |&gt;
+  ggplot(aes(x = month, y = total_prcp, fill = month)) +
+  geom_boxplot(outlier.alpha = 0.4) +
+  scale_fill_viridis_d(option = &quot;D&quot;) +
+  labs(
+    title = &quot;Monthly Total Precipitation Distribution in New York (1981-2010)&quot;,
+    x = &quot;Month&quot;,
+    y = &quot;Total Monthly Precipitation (mm)&quot;
+  ) +
+  theme_minimal() +
+  theme(legend.position = &quot;none&quot;)</code></pre>
+<p><img src="plotly_files/figure-html/creating_boxplot-1.png" alt="" width="672" /></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

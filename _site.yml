@@ -9,6 +9,8 @@ navbar:
       href: mailto:mts2203@cumc.columbia.edu
     - icon: fa-github fa-lg
       href: http://github.com/Madeline-T-Sharp/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/madeline-sharp-9933571a3/ 
 output:
   html_document:
     theme: flatly
